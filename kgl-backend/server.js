@@ -11,7 +11,7 @@ const path = require("path");
 require("dotenv").config({ path: path.join(__dirname, ".env") });
 
 const connectDb = require("./src/config/db");
-const seedUsers = require("./seedUsers");
+const { seedDefaultUsers } = require("./src/config/seedUsers");
 
 // Import route handlers for different modules.
 const authRoutes = require("./src/routes/auth");
@@ -79,7 +79,7 @@ async function start() {
   await connectDb();
   
   // Ensure default DB access user exists.
-  await seedUsers();
+  await seedDefaultUsers();
   
   const basePort = Number(process.env.PORT || 5000);
   const maxAttempts = 10;
