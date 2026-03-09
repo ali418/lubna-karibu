@@ -28,7 +28,7 @@
       <div class="sidebar-meta">
         <small id="userMeta"></small>
         <div class="sidebar-actions">
-          <button class="secondary" onclick="triggerRefresh()">Refresh Data</button>
+          <button class="secondary" onclick="event.preventDefault(); triggerRefresh()">Refresh Data</button>
           <button onclick="logout()">Logout</button>
         </div>
       </div>
